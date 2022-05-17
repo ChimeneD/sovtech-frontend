@@ -1,12 +1,14 @@
-import React from "react"
+import React from 'react';
+import Layout from './components/layout';
 import './App.css';
+import Header from './components/pages/Header';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>SOVTECH Test</h1>
-    </div>
+    <Layout>
+      <Header />
+    </Layout>
   );
-}
+};
 
 export default App;
