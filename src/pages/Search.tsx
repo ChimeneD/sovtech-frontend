@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { GET_SEARCH } from '../queries/queries';
 import Header from '../components/Header';
-import { Typography } from '@mui/material';
+import { CircularProgress, Typography } from '@mui/material';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
@@ -15,9 +15,16 @@ const Search = () => {
   console.log(data);
   if (loading)
     return (
-      <>
-        <p>Loading...</p>
-      </>
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <CircularProgress color='primary' />
+      </div>
     );
   if (error)
     return (

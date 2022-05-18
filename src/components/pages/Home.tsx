@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_NEXT_PREV } from '../../queries/queries';
 import { useNavigate } from 'react-router-dom';
-import { IconButton, Typography } from '@mui/material';
+import { CircularProgress, IconButton, Typography } from '@mui/material';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import { ContextAPI } from '../../utils/context';
 
@@ -48,9 +48,16 @@ const Body = () => {
 
   if (loading || next_loading)
     return (
-      <>
-        <p>Loading...</p>
-      </>
+      <div
+        style={{
+          height: '500px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <CircularProgress color='primary' />
+      </div>
     );
   if (error)
     return (

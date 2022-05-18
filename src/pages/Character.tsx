@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { GET_PERSON } from '../queries/queries';
 import Layout from '../components/layout';
 import Header from '../components/Header';
-import { Grid, Typography } from '@mui/material';
+import { CircularProgress, Grid, Typography } from '@mui/material';
 
 const Character = () => {
   const [searchParams] = useSearchParams();
@@ -19,9 +19,16 @@ const Character = () => {
   //if (error) return `Error! ${error}`;
   if (loading)
     return (
-      <>
-        <p>Loading...</p>
-      </>
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <CircularProgress color='primary' />
+      </div>
     );
   if (error)
     return (
@@ -34,7 +41,13 @@ const Character = () => {
       <Header />
       {data ? (
         <main
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            margin: '30px auto',
+            width: '75%',
+            padding: '20px',
+          }}
         >
           <Grid container spacing={3}>
             <Grid item>

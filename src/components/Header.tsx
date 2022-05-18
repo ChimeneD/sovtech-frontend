@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { IconButton, Link, TextField } from '@mui/material';
+import { IconButton, TextField } from '@mui/material';
 import { BsSearch } from 'react-icons/bs';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../utils/darth-vader.png';
@@ -27,10 +27,15 @@ const Header = () => {
         <img src={logo} alt='logo' style={{ margin: 'auto', width: '200px' }} />
       )}
       <nav style={{ margin: '20px auto' }}>
-        <NavLink to='/' style={{ cursor: 'pointer' }}>
-          <Link color='secondary'>
-            <BiHome />
-          </Link>
+        <NavLink
+          to='/'
+          style={
+            darkMode
+              ? { cursor: 'pointer', color: 'white' }
+              : { cursor: 'pointer', color: 'red' }
+          }
+        >
+          <BiHome />
         </NavLink>
       </nav>
       <form onSubmit={handleSubmit}>
