@@ -18,7 +18,6 @@ import Layout from './components/layout';
 const link = from([
   new HttpLink({
     uri: process.env.REACT_APP_BACKEND_SERVER_URL,
-    credentials: 'include',
   }),
 ]);
 
