@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { colors } from './colors';
 import { fonts } from './fonts';
 const container_width_lg = '75%';
@@ -24,7 +24,7 @@ export const main_class = makeStyles((theme: any) => ({
 
   container: {
     width: container_width_lg,
-    margin: '0 auto',
+    margin: '20px auto',
     //medium screen
     [theme.breakpoints.down('md')]: {
       width: container_width_md,

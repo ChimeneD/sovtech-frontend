@@ -22,9 +22,9 @@ export const colors: {
   success_light: '#49AB5A',
   info_light: '#0FFACB',
   //dark theme colors
-  background_dark: '#000A14',
+  background_dark: '#142229',
   background_variant_dark: 'string',
-  primary_dark: 'string',
-  secondary_dark: 'string',
-  tertiary_dark: 'string',
+  primary_dark: '#FCFF6C',
+  secondary_dark: '#FEFFAD',
+  tertiary_dark: '#F5FFEB',
 };
